@@ -1,24 +1,23 @@
 # MDEP
-> Das ist mein Lieblingsprojekt, es ist ein Markdown-Editor (Pro), mein Motto ist: beste Qualität kostenlos für alle, keine Werbung, keine Kosten, aber viel Herzblut
+> This is my favorite project - it’s an Markdown editor (Pro). My motto is: top quality for free, for everyone, no ads, no cost, but a lot of heart and soul.
 ---
-## Wieso sollte ich den **MDEP** nutzen und nicht einen anderen MD Editor?
-- Der **MDEP** bietet die möglichkeit Stylesheets zu importieren und das Aussehen sehr flexibel zu verändern
-- Du kannst dir JavaScript erweiterungen schreiben oder schreiben lassen um den **MDEP** für dich Perfekt zu machen
-- Er funktioniert offline und du brauchst keine Anmeldung
+## Why should I use the **MDEP** instead of another MD editor?
+- **MDEP** offers the ability to import stylesheets and customize the appearance with great flexibility.
+- You can write, or have someone else write, JavaScript extensions to form **MDEP** perfectly to your needs.
+- It works offline, and no sign-up is required.
 ![CSS-Settings](Bilder/cssUI.png)
-- Im **MDEP** wird keine Werbung gezeigt oder Daten von dir erfasst
-- Mit den Enthaltenen `Plug-ins` kannst du Produktiver arbeiten oder nebenbei Snake Spielen
-- In der `einstellungen.html` datei kannst du störende Elemente Ausschalten um Konzentrierter zu arbeiten
+- No advertisements are displayed and no data about you is collected in the **MDEP**
+- With the inclouded `Plug-ins`, you can get more productive or play snake... and much more of course
+- In the `settings.html` file you can hide elements to work more focused
 ![Einstellungen](Bilder/settings.png)
-- Es kommen immer mal wieder Experimentelle Funktionen um die UX zu verbessern oder dir die Arbeit zu erschweren (Tagesform Abhängig)
-- Wenn du möchtest kannst du sogar in älteren Schlichteren Versionen Arbeiten
-- Bei jedem laden der Webseite wird dir ein Neuer Inspirierender Splash-Text angezeigt dessen Idee nicht von einem Schwedischen Pixelartigen Game stammt
-- Im **MDEPro** gibt es hinter jeder Ecke Easter-Eggs findest du alle?
+- Experimental features are introduced from time to time—either to improve the UX or to make your work more difficult (depending on how I'm feeling that day XD).
+- If you like, you can even work in older, simpler versions.
+- Every time the webpage loads, you are shown a new, inspiring splash text, the idea for which does not come from a Swedish pixel-art game.
+- There are Easter eggs around every corner in **MDEPro**—can you find them all?
 
-Ich würde Mich sehr Freuen wenn du dich für den **MDEPro** Entscheidest da er auch `Extended Markdown` mitbringt was dir sehr viele Möglichkeiten gibt
+I would like to hear that your yousing the **MDEP**. Btw It has not normal MD it has *Extended Markdown*
 ![User Interface](Bilder/UI.png)
 
 ---
-## Für Entwickler
-- Der **MDEPro** bietet nach mehrstündiger Strukturierung einen "einfachen" einblick in den Code
-- Mit dem `Developer Mode` bekommst du ein paar kleine Spielerein dazu
+## For Developers
+- After several hours of structuring, **MDEPro** offers a "simple" insight into the code.
