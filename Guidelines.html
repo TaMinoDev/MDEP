@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exportiertes Markdown</title>
+<title>Exported Markdown</title>
 <style>
   html {
     background-color: #0e0e0e; 
@@ -140,12 +140,12 @@ caption {
             width: 150px;
             height: 100px;
             overflow: auto;
-            resize: both; /* Größenveränderbar */
+            resize: both; /* resizable */
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            cursor: move; /* Zeigt Verschiebbarkeit an */
+            cursor: move; /* shows moveable */
             user-select: none;
             z-index: 1000;
         }
@@ -155,9 +155,9 @@ caption {
         function createOverlay() {
             const overlay = document.createElement("div");
             overlay.className = "overlay";
-            //overlay.innerText = "Zieh mich!";
+            //overlay.innerText = "Pull me!";
             
-            // Zufällige Startposition
+            // Random starting position
             overlay.style.top = (Math.random() * 300 + 100) + "px";
             overlay.style.left = (Math.random() * 300 + 50) + "px";
             
@@ -165,19 +165,19 @@ caption {
             makeElementDraggable(overlay);
         }
 
-        // Alle Elemente mit der Klasse "overlay" entfernen
+        // Remove all elements with class "overlay"
         function removeAllOverlays() {
             const overlays = document.querySelectorAll(".overlay");
             overlays.forEach(el => el.remove());
         }
 
-        // Logik zum Verschieben (Drag & Drop)
+        // Logic for Drag & Drop
         function makeElementDraggable(elmnt) {
             let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
             elmnt.onmousedown = function(e) {
                 e.preventDefault();
-                // Startposition der Maus
+                // Mouse starting position
                 pos3 = e.clientX;
                 pos4 = e.clientY;
                 document.onmouseup = closeDragElement;
@@ -186,12 +186,12 @@ caption {
 
             function elementDrag(e) {
                 e.preventDefault();
-                // Neue Position berechnen
+                // Calculate new position
                 pos1 = pos3 - e.clientX;
                 pos2 = pos4 - e.clientY;
                 pos3 = e.clientX;
                 pos4 = e.clientY;
-                // Element verschieben
+                // Move Element
                 elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
                 elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
             }
@@ -204,66 +204,66 @@ caption {
     </script>
 <script>
 function toggleSound(soundId) {
-  // 1. Finde das Audio-Element und den zugehörigen Button anhand der ID
+  // 1. Find the audio-element and the corresponding button based on their ID
   const audioPlayer = document.getElementById('audio-' + soundId);
   const soundButton = document.getElementById('button-' + soundId);
 
   if (!audioPlayer || !soundButton) {
-    console.error("Audio- oder Button-Element nicht gefunden für ID:", soundId);
+    console.error("Audio- or Button-Element not found for ID:", soundId);
     return;
   }
 
-  // 2. Prüfe den aktuellen Status des Audio-Players
+  // 2. Check current status of audio player
   if (audioPlayer.paused) {
-    // Wenn es pausiert ist, starte es und ändere den Button-Text zu 'Stop'
+    // If paused, start player and set Button-Text to 'Stop'
     audioPlayer.play();
     soundButton.textContent = 'Stop';
 
-    // Optional: Füge einen Event-Listener hinzu, um den Button automatisch wieder auf 'Play' zu stellen, 
-    // sobald die Wiedergabe beendet ist.
+    // Optional: Add an Event-Listener, to automatically reset the  Button to 'Play' 
+    // once the playback has finished.
     audioPlayer.onended = function() {
       soundButton.textContent = 'Play';
     };
 
   } else {
-    // Wenn es gerade spielt, stoppe es, setze die Zeit zurück und ändere den Button-Text zu 'Play'
+    // If playback is playing, stop it, reset the time and set the Button-Text back to 'Play'
     audioPlayer.pause();
-    audioPlayer.currentTime = 0; // Setzt den Sound an den Anfang zurück
+    audioPlayer.currentTime = 0; // Resets the sound to the beginning
     soundButton.textContent = 'Play';
   }
 }
 </script>
-<h1><header style="background: #333; padding: 10px; text-align: center; font-size: 1.5em;">Richtlinien</header></h1><br>Schön das sie sich entschlossen haben sich die Richtlinien durch zu lesen...<br><br><h2>1. Bitte beachten sie die CC Lizenz (siehe <code class="inline">Resources/infon.html</code>)</h2><br><hr><br><h2>2. As-Is:</h2><br>Es wird keine Haftung für Daten Verlust, Funktionalität, Richtigkeit und ähnliches übernommen<br><hr><br><h2>3. Nutzerbedingungen:</h2><br>Die Erstellung/Speicherung von Inhalten gegen das geltende Recht Deutschlands ist verboten, unteranderem:<ul><li>Hassrede</li><li>Urheberrechtsverletzungen</li><li>Datenschutzrechtsverletzungen</li></ul><br><br>Das Kommerzielle Nutzen des MDEP ist untersagt insofern es keine explizierte genemigung des Entwicklers gibt.<br><hr><br><h2>4. Datenschutzrichtlinien:</h2><br>Es werden keine Daten online gespeichert, der Browser Interne Speicher <code class="inline">localStorage</code> wird nur genutzt um z.B.: die aktivierung verschidener erweiterungen zu gewährleisten. Bilder/Videos/etc. werden nirgendwo gespeichert sondern <b>nur</b> aus den Ordner <code class="inline">Bilder</code>/<code class="inline">Video</code>/<code class="inline">...</code> entnommen.<br><hr><br><h2>5. Lizenzen:</h2><br>die CC Lizenz erlaubt das bearbeiten des MDEP unter der nennung des Original Entwicklers und den selben Lizenz bedingungen, bei der Bearbeitung einer Bearbeitung des MDEP ist immer der Entwickler des MDEP zu nennen.<br><br>Das Entfernen/Verändern/... des Footers einer Exportierten datei ist untersagt.<br><hr><br>So einfach kann es sein, das wars, danke fürs Nutzen des MDEP und das Lesen der Richtlinien<br>
+<h1><header style="background: #333; padding: 10px; text-align: center; font-size: 1.5em;">Guidelines</header></h1><br>Thank you for reading the guidelines...<br><br><h2>1. Please note the CC licence (see <code class="inline">Resources/infon.html</code>)</h2><br><hr><br><h2>2. As-Is:</h2><br>No liability for data loss, functionality, Correctness etc.<br><hr><br><h2>3. Terms of use:</h2><br>The creation/storing of content violating German Law is forbidden, aswell as:<ul><li>Hate speech</li><li>Copyright infringement</li><li>Privacy policy violation</li></ul><br><br>Commercial use of MDEP is forbidden, unless the the developer gave explicit permission..<br><hr><br><h2>4. Privacy Policy:</h2><br>No data is stored online, the browsers <code class="inline">localStorage</code> is only used for activating various extentions. Images/Videos/etc. are't saved anywhere <b>only</b> pulled from the folder <code class="inline">Bilder</code>/<code class="inline">Video</code>/<code class="inline">...</code><br><hr><br><h2>5. Licences:</h2><br>The CC Licence permits editing the MDEP with crediting the original developer under the same licence, every edit of MDEP requires the original developer credit.<br><br>The removal/edit... of the footer of an exported file is prohibited..<br><hr><br>As easy as that, that's all, thanks for using MDEP and reading the guidelines<br>
 
 <footer style="font-family: Arial, sans-serif; color: #f0f0f0;margin-left: auto;margin-right: auto; text-align: center; font-size: 10px">made with <a class="mail" href="mailto:mdep-tps.design@gmx.de?subject=Footer&">MDEP</a> by TPS-Design ©</footer>
 
 <!-- 
-===== Original Markdown Quelle =====
-# +[Richtlinien]
-Schön das sie sich entschlossen haben sich die Richtlinien durch zu lesen...
+===== Original Markdown Source =====
+# +[Guidelines]
+Thank you for reading the guidelines...
 
-## 1. Bitte beachten sie die CC Lizenz (siehe 'Resources/infon.html')
+## 1. Please note the CC licence (see 'Resources/infon.html')
 ---
 ## 2. As-Is:
-Es wird keine Haftung für Daten Verlust, Funktionalität, Richtigkeit und ähnliches übernommen
+No liability for data loss, functionality, Correctness etc.
 ---
-## 3. Nutzerbedingungen:
-Die Erstellung/Speicherung von Inhalten gegen das geltende Recht Deutschlands ist verboten, unteranderem:
-- Hassrede
-- Urheberrechtsverletzungen
-- Datenschutzrechtsverletzungen
+## 3. Terms of use:
+The creation/storing of content violating German Law is forbidden, aswell as:
+- Hate speech
+- Copyright infringement
+- Privacy policy violation
 
-Das Kommerzielle Nutzen des MDEP ist untersagt insofern es keine explizierte genemigung des Entwicklers gibt.
+Commercial use of MDEP is forbidden, unless the the developer gave explicit permission.
 ---
-## 4. Datenschutzrichtlinien:
-Es werden keine Daten online gespeichert, der Browser Interne Speicher 'localStorage' wird nur genutzt um z.B.: die aktivierung verschidener erweiterungen zu gewährleisten. Bilder/Videos/etc. werden nirgendwo gespeichert sondern **nur** aus den Ordner 'Bilder'/'Video'/'...' entnommen.
+## 4. Privacy Policy:
+No data is stored online, the browsers 'localStorage' is only used for activating various extentions. Images/Videos/etc. are't saved anywhere **only** pulled from the folders 'Images'/'Video'/'...'.
 ---
-## 5. Lizenzen:
-die CC Lizenz erlaubt das bearbeiten des MDEP unter der nennung des Original Entwicklers und den selben Lizenz bedingungen, bei der Bearbeitung einer Bearbeitung des MDEP ist immer der Entwickler des MDEP zu nennen.
+## 5. Licences:
+The CC Licence permits editing the MDEP with crediting the original developer under the same licence, every edit of MDEP requires the original developer credit.
 
-Das Entfernen/Verändern/... des Footers einer Exportierten datei ist untersagt.
+The removal/edit... of the footer of an exported file is prohibited.
 ---
-So einfach kann es sein, das wars, danke fürs Nutzen des MDEP und das Lesen der Richtlinien
+As easy as that, that's all, thanks for using MDEP and reading the guidelines
 
 ====================================
 -->
