@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login-Authentifizierung</title>
+  <title>Login authentication</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -101,16 +101,16 @@
   </style>
 </head>
 <body>
-  <h2>Authentifizierung</h2>
+  <h2>Authentication</h2>
   <div class="input-group">
     <label for="userId">ID:</label>
-    <input type="text" placeholder="z. B.: 12345-67891" id="userId">
+    <input type="text" placeholder="e.g.: 12345-67891" id="userId">
   </div>
   <div class="input-group">
-    <label for="password">Passwort:</label>
-    <input type="password" placeholder="z. B.: Kxbh-Ttdf" id="password">
+    <label for="password">Password:</label>
+    <input type="password" placeholder="e.g.: Kxbh-Ttdf" id="password">
   </div>
-  <button onclick="authenticate()">Einloggen</button>
+  <button onclick="authenticate()">Log in</button>
 
   <div id="status-bar" class="dot-animation"></div>
 
@@ -126,21 +126,21 @@
 
       statusBar.style.visibility = "visible";
       statusBar.className = "loading dot-animation";
-      statusBar.textContent = "Bitte Warten";
+      statusBar.textContent = "Please wait";
 
-      // Nach 4 Sekunden Ergebnis anzeigen
+      // Show result after 4 seconds
       setTimeout(() => {
         const match = validCredentials.some(entry => entry.id === id && entry.password === pw);
 
         statusBar.classList.remove("dot-animation");
 
         if (match) {
-          statusBar.textContent = "Authentifizierung erfolgreich";
+          statusBar.textContent = "Authentication succesful";
           localStorage.setItem('isDeveloper?','true');
           history.back();
           statusBar.className = "success";
         } else {
-          statusBar.textContent = "Authentifizierung gescheitert";
+          statusBar.textContent = "Authentication failed";
           statusBar.className = "error";
         }
       }, 3500);
