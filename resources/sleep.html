@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DU MUSST SCHLAFEN GEHEN</title>
+<title>YOU NEED TO GO TO SLEEP</title>
 <style>
   html {
     background-color: #0e0e0e; 
@@ -140,20 +140,20 @@ caption {
             width: 150px;
             height: 100px;
             overflow: auto;
-            resize: both; /* Größenveränderbar */
+            resize: both; /* resizable */
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            cursor: move; /* Zeigt Verschiebbarkeit an */
+            cursor: move; /* shows movable */
             user-select: none;
             z-index: 1000;
         }
 
         .ticker-wrap {
             width: 100%;
-            overflow: hidden; /* Versteckt den Text außerhalb des Bereichs */
-            background: #3e3e3e; /* Klassisches Rot für Eilmeldungen */
+            overflow: hidden; /* hides text outside the area */
+            background: #3e3e3e; /* Classic red for breaking news */
             color: white;
             border-top: 1px solid #1e1e1e;
             border-bottom: 1px solid #1e1e1e;
@@ -161,27 +161,27 @@ caption {
             font-weight: bold;
             padding: 10px 0;
            /* position: fixed;
-            bottom: 0; /* Position am unteren Bildschirmrand */
+            bottom: 0; /* Position at bottom screen edge  */
             left: 0;
             display: flex;
         }
 
-        /* Die bewegliche Leiste */
+        /* Movable bar */
         .ticker-move {
             display: flex;
             white-space: nowrap;
-            padding-left: 100%; /* Startet außerhalb des Bildschirms */
+            padding-left: 100%; /* starts offscreen */
             animation: ticker-scroll 25s linear infinite;
         }
 
-        /* Einzelne News-Elemente */
+        /* individual news elements */
         .ticker-item {
             display: inline-block;
             padding: 0 50px;
             font-size: 1.2rem;
         }
 
-        /* Animation: Verschiebt den Text von rechts nach links */
+        /* Animation: moves the text from right to left */
         @keyframes ticker-scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
@@ -192,9 +192,9 @@ caption {
         function createOverlay() {
             const overlay = document.createElement("div");
             overlay.className = "overlay";
-            //overlay.innerText = "Zieh mich!";
+            //overlay.innerText = "Pull me!";
             
-            // Zufällige Startposition
+            // Random starting position
             overlay.style.top = (Math.random() * 300 + 100) + "px";
             overlay.style.left = (Math.random() * 300 + 50) + "px";
             
@@ -202,19 +202,19 @@ caption {
             makeElementDraggable(overlay);
         }
 
-        // Alle Elemente mit der Klasse "overlay" entfernen
+        // Remove all elements of class "overlay"
         function removeAllOverlays() {
             const overlays = document.querySelectorAll(".overlay");
             overlays.forEach(el => el.remove());
         }
 
-        // Logik zum Verschieben (Drag & Drop)
+        // Logic for Drag & Drop
         function makeElementDraggable(elmnt) {
             let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
             elmnt.onmousedown = function(e) {
                 e.preventDefault();
-                // Startposition der Maus
+                // Mouse starting position
                 pos3 = e.clientX;
                 pos4 = e.clientY;
                 document.onmouseup = closeDragElement;
@@ -223,12 +223,12 @@ caption {
 
             function elementDrag(e) {
                 e.preventDefault();
-                // Neue Position berechnen
+                // calculate new position
                 pos1 = pos3 - e.clientX;
                 pos2 = pos4 - e.clientY;
                 pos3 = e.clientX;
                 pos4 = e.clientY;
-                // Element verschieben
+                // Move element
                 elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
                 elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
             }
@@ -241,7 +241,7 @@ caption {
     </script>
 <script>
 function toggleSound(soundId) {
-  // 1. Finde das Audio-Element und den zugehörigen Button anhand der ID
+  // 1. Find the Audio-Element and the corresponding Button with the ID
   const audioPlayer = document.getElementById('audio-' + soundId);
   const soundButton = document.getElementById('button-' + soundId);
 
@@ -250,35 +250,35 @@ function toggleSound(soundId) {
     return;
   }
 
-  // 2. Prüfe den aktuellen Status des Audio-Players
+  // 2. Check audio players current status
   if (audioPlayer.paused) {
-    // Wenn es pausiert ist, starte es und ändere den Button-Text zu 'Stop'
+    // if paused, set it to play and set the Button-Text to 'Stop'
     audioPlayer.play();
     soundButton.textContent = 'Stop';
 
-    // Optional: Füge einen Event-Listener hinzu, um den Button automatisch wieder auf 'Play' zu stellen, 
-    // sobald die Wiedergabe beendet ist.
+    // Optional: Add an Event-Listener, to automatically set the Button back to 'Play', 
+    // once playback is stopped.
     audioPlayer.onended = function() {
       soundButton.textContent = 'Play';
     };
 
   } else {
-    // Wenn es gerade spielt, stoppe es, setze die Zeit zurück und ändere den Button-Text zu 'Play'
+    // if playing, stop playback, reset the time and set Button-Text to 'Play'
     audioPlayer.pause();
-    audioPlayer.currentTime = 0; // Setzt den Sound an den Anfang zurück
+    audioPlayer.currentTime = 0; // Resets the sound to beginning
     soundButton.textContent = 'Play';
   }
 }
 </script>
-<h1><header style="background: #333; padding: 10px; text-align: center; font-size: 1.5em;">GEH JETZT ENTLICH SCHLAFEN</header></h1><br>ES IST NICHTMAL VIER UHR...<br><button onclick="history.back();">ICH WILL ABER NOCH ARBEITEN</button><br>
+<h1><header style="background: #333; padding: 10px; text-align: center; font-size: 1.5em;">GO TO SLEEP ALREADY</header></h1><br>IT'S NOT EVEN 4AM...<br><button onclick="history.back();">BUT I STILL WANT TO WORK</button><br>
 
 <footer style="font-family: Arial, sans-serif; color: #f0f0f0;margin-left: auto;margin-right: auto; text-align: center; font-size: 10px">made with <a class="mail" href="mailto:mdep-tps.design@gmx.de?subject=Footer&">MDEP</a> by TPS-Design ©</footer>
 
 <!-- 
-===== Original Markdown Quelle =====
-# +[GEH JETZT ENTLICH SCHLAFEN]
-ES IST NICHTMAL VIER UHR...
-<button oncklick="history.back()">ICH WILL ABER NOCH ARBEITEN</button>
+===== Original Markdown Source =====
+# +[GO TO SLEEP ALREADY]
+IT'S NOT EVEN 4AM...
+<button oncklick="history.back()">BUT I STILL WANT TO WORK</button>
 
 ====================================
 -->
