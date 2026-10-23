@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Einstellungen</title>
+<title>Settings</title>
 <style>
   html {
     background-color: #0e0e0e; 
@@ -133,29 +133,29 @@ caption {
 .inline {background:#0e0e0e; padding:2px 4px; border-radius:3px; font-family:monospace;}
 </style></head>
 <body>
-<h1>Einstellungen<button onclick="location.reload();">Aktuallisieren</button></h1>
+<h1>Settings<button onclick="location.reload();">Update</button></h1>
 <table id="moduleTable">
   <tr>
-    <th>Erweiterung</th>
-    <th>Ja</th>
-      <th>Nein</th>
+    <th>Extensions</th>
+    <th>Yes</th>
+      <th>No</th>
   <tr>
-    <td>Java Script</td><td><button onclick="toggleSetting('Java_Script',1)" class="goodbutton">An</button><td><button onclick="toggleSetting('Java_Script',0)">Aus</button></td>
+    <td>Java Script</td><td><button onclick="toggleSetting('Java_Script',1)" class="goodbutton">on</button><td><button onclick="toggleSetting('Java_Script',0)">off</button></td>
   <tr>
-    <td>Design änderderungsmodul ausblenden</td><td><button onclick="toggleSetting('css',1)" class="goodbutton">An</button><td><button onclick="toggleSetting('css',0)">Aus</button></td>
+    <td>Hide design change module</td><td><button onclick="toggleSetting('css',1)" class="goodbutton">on</button><td><button onclick="toggleSetting('css',0)">off</button></td>
   <tr>
-    <td>Stoppuhr</td><td><button onclick="toggleSetting('uhr',1)" class="goodbutton">An</button><td><button onclick="toggleSetting('uhr',0)">Aus</button></td>
+    <td>Stop watch</td><td><button onclick="toggleSetting('clock',1)" class="goodbutton">on</button><td><button onclick="toggleSetting('clock',0)">off</button></td>
     <tr>
-    <td>Header ausblenden</td><td><button onclick="toggleSetting('header',1)" class="goodbutton">Ja</button><td><button onclick="toggleSetting('header',0)">Nein</button></td>
+    <td>Hide header</td><td><button onclick="toggleSetting('header',1)" class="goodbutton">yes</button><td><button onclick="toggleSetting('header',0)">no</button></td>
     <tr>
-    <td>Richtlinien Akzeptieren</td><td><button onclick="localStorage.setItem('richltinien_a','true');" class="goodbutton">Ja</button><td><button onclick="localStorage.setItem('richltinien_a','false');">Nein</button></td>
+    <td>Accept guidelines</td><td><button onclick="localStorage.setItem('guidelines_a','true');" class="goodbutton">yes</button><td><button onclick="localStorage.setItem('guidelines_a','false');">no</button></td>
 </table>
 <footer style="font-family: Arial, sans-serif; color: #f0f0f0;margin-left: auto;margin-right: auto; text-align: center; font-size: 10px">made with <a class="mail" href="mailto:mdep-tps.design@gmx.de?subject=Footer&">MDEP</a> by TPS-Design/Coding ©</footer>
 
 <script>
   function toggleSetting(key, value) {
       const settings = JSON.parse(localStorage.getItem('editorSettings')) || {};
-      settings[key] = value; // value ist 1 oder 0
+      settings[key] = value; // value is 1 or 0
       localStorage.setItem('editorSettings', JSON.stringify(settings));
   }
 </script>
